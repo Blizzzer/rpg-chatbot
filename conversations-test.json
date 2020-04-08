@@ -1,0 +1,79 @@
+[
+  {
+    "tag": "ROOT_TAG",
+    "keywords": [],
+    "tagsToAchieveBefore": [],
+    "nextTags": ["GREETINGS", "PROFESSION"],
+    "tagsToCloseWhenDone": [],
+    "isClosed": true,
+    "isAchieved": true,
+    "patterns": [],
+    "responses": []
+  },
+  {
+    "tag": "GREETINGS",
+    "keywords": [],
+    "tagsToAchieveBefore": [],
+    "nextTags": ["PROFESSION", "TOWN", "QUEST_1_INTRO", "QUEST_2_INTRO"],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "patterns": ["Hello", "Greetings", "Welcome", "Good day sir"],
+    "responses": ["Good day sir", "Welcome", "Greetings", "Hello, What brings you here?"]
+  },
+  {
+    "tag": "PROFESSION",
+    "keywords": [],
+    "tagsToAchieveBefore": ["GREETINGS"],
+    "nextTags": [],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "patterns": ["What's your profession?", "What you do for living?", "What is your occupation sir?"],
+    "responses": ["My job is to keep this town secure.", "I protecting those people.", "I help those in need."]
+  },
+  {
+    "tag": "TOWN",
+    "keywords": [],
+    "tagsToAchieveBefore": ["GREETINGS"],
+    "nextTags": [],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "patterns": ["Where am I?", "What is this place", "What is the name of this town?"],
+    "responses": ["Greenvile", "We call this town Greenvile"]
+  },
+  {
+    "tag": "QUEST_1_INTRO",
+    "keywords": [],
+    "tagsToAchieveBefore": ["GREETINGS"],
+    "nextTags": ["QUEST_1_ADD_INFO"],
+    "tagsToCloseWhenDone": ["QUEST_1_INTRO"],
+    "isClosed": false,
+    "isAchieved": false,
+    "patterns": ["Do you have any job for me?", "Can I help you with something?"],
+    "responses": ["Yeah, Did you heard about cave to the North of town? I heard something wrong is happening there. Can you investigate?"]
+  },
+  {
+    "tag": "QUEST_1_ADD_INFO",
+    "keywords": ["CAVE"],
+    "tagsToAchieveBefore": ["QUEST_1_INTRO"],
+    "nextTags": [],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "patterns": ["Can you tell me again about that cave?", "Do you have more information about that cave?"],
+    "responses": ["I heard bad news about cave to the north of town"]
+  },
+  {
+    "tag": "QUEST_1_FINISH",
+    "keywords": ["CULT"],
+    "tagsToAchieveBefore": ["QUEST_1_INTRO"],
+    "nextTags": [],
+    "tagsToCloseWhenDone": ["QUEST_1_ADD_INFO", "QUEST_1_FINISH"],
+    "isClosed": false,
+    "isAchieved": false,
+    "patterns": ["I searched the caves, there are some tracks of some cult activities there"],
+    "responses": ["Good job, We need to investigate that matter further - they can be dangerous."]
+  }
+]
