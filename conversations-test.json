@@ -1,5 +1,17 @@
 [
   {
+    "tag": "UNKNOWN",
+    "keywords": [],
+    "tagsToAchieveBefore": [],
+    "nextTags": [],
+    "tagsToCloseWhenDone": [],
+    "isClosed": true,
+    "isAchieved": true,
+    "redirectTo": "UNKNOWN",
+    "patterns": [],
+    "responses": ["I don't know what you are talking about"]
+  },
+  {
     "tag": "ROOT_TAG",
     "keywords": [],
     "tagsToAchieveBefore": [],
@@ -7,6 +19,7 @@
     "tagsToCloseWhenDone": [],
     "isClosed": true,
     "isAchieved": true,
+    "redirectTo": "UNKNOWN",
     "patterns": [],
     "responses": []
   },
@@ -18,6 +31,7 @@
     "tagsToCloseWhenDone": [],
     "isClosed": false,
     "isAchieved": false,
+    "redirectTo": "UNKNOWN",
     "patterns": ["Hello", "Greetings", "Welcome", "Good day sir"],
     "responses": ["Good day sir", "Welcome", "Greetings", "Hello, What brings you here?"]
   },
@@ -29,6 +43,7 @@
     "tagsToCloseWhenDone": [],
     "isClosed": false,
     "isAchieved": false,
+    "redirectTo": "UNKNOWN",
     "patterns": ["What's your profession?", "What you do for living?", "What is your occupation sir?"],
     "responses": ["My job is to keep this town secure.", "I protecting those people.", "I help those in need."]
   },
@@ -40,6 +55,7 @@
     "tagsToCloseWhenDone": [],
     "isClosed": false,
     "isAchieved": false,
+    "redirectTo": "UNKNOWN",
     "patterns": ["Where am I?", "What is this place", "What is the name of this town?"],
     "responses": ["Greenvile", "We call this town Greenvile"]
   },
@@ -51,6 +67,7 @@
     "tagsToCloseWhenDone": ["QUEST_1_INTRO"],
     "isClosed": false,
     "isAchieved": false,
+    "redirectTo": "UNKNOWN",
     "patterns": ["Do you have any job for me?", "Can I help you with something?"],
     "responses": ["Yeah, Did you heard about cave to the North of town? I heard something wrong is happening there. Can you investigate?"]
   },
@@ -62,6 +79,7 @@
     "tagsToCloseWhenDone": [],
     "isClosed": false,
     "isAchieved": false,
+    "redirectTo": "QUEST_1_INTRO",
     "patterns": ["Can you tell me again about that cave?", "Do you have more information about that cave?"],
     "responses": ["I heard bad news about cave to the north of town"]
   },
@@ -73,6 +91,7 @@
     "tagsToCloseWhenDone": ["QUEST_1_ADD_INFO", "QUEST_1_FINISH"],
     "isClosed": false,
     "isAchieved": false,
+    "redirectTo": "QUEST_1_INTRO",
     "patterns": ["I searched the caves, there are some tracks of some cult activities there"],
     "responses": ["Good job, We need to investigate that matter further - they can be dangerous."]
   }
