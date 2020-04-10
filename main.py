@@ -1,5 +1,6 @@
 from typing import Dict
 from conversationgraph import ConversationGraph, Corpus
+import random
 
 print("Hello World")
 
@@ -21,10 +22,7 @@ tag: Corpus
 # TODO: obtain corpus based on tags probabilities map and searcher result
 # tag = graph.searchTagToReturn(tagProbabilities)
 
-textToPrint: str = ""
-
-# TODO: choose text to print - random from corpus
-# textToPrint = randomizer(tag.responses)
+textToPrint: str = random.choice(tag.responses)
 
 print(textToPrint)
 
