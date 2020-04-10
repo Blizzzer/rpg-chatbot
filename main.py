@@ -1,4 +1,3 @@
-from typing import Dict
 from conversationgraph import ConversationGraph, Corpus
 import random
 
@@ -12,15 +11,15 @@ input_string: str = ""
 # TODO: obtain input string
 # input_string = inputStringObtainer()
 
-tagProbabilities: Dict[str, float]
+mostFittingTag: str = ""
 
-# TODO: obtain tags probabilities based on input string
-# tagProbabilities = neuralNetworkAnalysis(input_string)
+# TODO: obtain mostFittingTag based on input string
+# mostFittingTag = neuralNetworkAnalysis(input_string)
 
 tag: Corpus
 
 # TODO: obtain corpus based on tags probabilities map and searcher result
-# tag = graph.searchTagToReturn(tagProbabilities)
+# tag = graph.searchTagToReturn(mostFittingTag)
 
 textToPrint: str = random.choice(tag.responses)
 
