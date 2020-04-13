@@ -21,6 +21,8 @@ tag = graph.get_corpus_to_respond(mostFittingTag)
 # need to check if it is working - "reference problem"
 graph.close_corresponding_tags(tag)
 
+tag.isAchieved = True
+
 textToPrint: str = random.choice(tag.responses)
 
 print(textToPrint)
