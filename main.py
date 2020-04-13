@@ -1,8 +1,6 @@
 from conversationgraph import ConversationGraph, Corpus
 import random
 
-print("Hello World")
-
 graph = ConversationGraph("conversations-test.json")
 print(graph.corpuses[0].tag)
 
@@ -18,8 +16,10 @@ mostFittingTag: str = ""
 
 tag: Corpus
 
-# TODO: obtain corpus based on tags probabilities map and searcher result
-# tag = graph.searchTagToReturn(mostFittingTag)
+tag = graph.get_corpus_to_respond(mostFittingTag)
+
+# need to check if it is working - "reference problem"
+graph.close_corresponding_tags(tag)
 
 textToPrint: str = random.choice(tag.responses)
 
