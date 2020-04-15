@@ -1,2 +1,5 @@
 spacy
 spacy-lookups-data
+numpy
+tensorflow==1.13.2
+tflearn

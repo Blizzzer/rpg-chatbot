@@ -1,48 +1,12 @@
-import json
-from typing import List
+from model import Corpus
+from reader import InputStreamReader
 
 
-class Corpus:
-    def __init__(self,
-                 tag: str,
-                 keywords: List[str],
-                 tagsToAchieveBefore: List[str],
-                 tagsToCloseWhenDone: List[str],
-                 isClosed: bool,
-                 isAchieved: bool,
-                 redirectTo: str,
-                 patterns: List[str],
-                 responses: List[str]):
-        self.tag = tag
-        self.keywords = keywords
-        self.tagsToAchieveBefore = tagsToAchieveBefore
-        self.tagsToCloseWhenDone = tagsToCloseWhenDone
-        self.isClosed = isClosed
-        self.isAchieved = isAchieved
-        self.redirectTo = redirectTo
-        self.patterns = patterns
-        self.responses = responses
+class ConversationGraph(InputStreamReader):
 
-
-class ConversationGraph:
-    def __init__(self, path: str):
-        with open(path) as json_file:
-            data = json.load(json_file)
-            self.corpuses: List[Corpus] = []
-            for tag in data:
-                self.corpuses.append(
-                    Corpus(
-                        tag["tag"],
-                        tag["keywords"],
-                        tag["tagsToAchieveBefore"],
-                        tag["tagsToCloseWhenDone"],
-                        tag["isClosed"],
-                        tag["isAchieved"],
-                        tag["redirectTo"],
-                        tag["patterns"],
-                        tag["responses"]
-                    )
-                )
+    def __init__(self):
+        super().__init__("conversations-test.json")
+        self.parse_json()
 
     def get_by_tag(self, tag: str) -> Corpus:
         for x in self.corpuses:
