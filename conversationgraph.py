@@ -1,9 +1,9 @@
 from model import Corpus
-from reader import InputStreamReader
+from reader import ConversationGraphJsonReader
 import random
 
 
-class ConversationGraph(InputStreamReader):
+class ConversationGraph(ConversationGraphJsonReader):
 
     def __init__(self):
         super().__init__("conversations-test.json")

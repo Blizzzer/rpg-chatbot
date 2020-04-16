@@ -29,11 +29,3 @@ class NeuralNetworkTrainingDTO:
                  patterns: List[List[str]]):
         self.tag = tag
         self.lemmas = patterns
-
-
-class ConversationGraphDTO:
-    def __init__(self,
-                 tag: str,
-                 probability):
-        self.tag = tag
-        self.probability = probability

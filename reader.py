@@ -3,9 +3,10 @@ from model import Corpus
 import json
 
 
-class InputStreamReader:
+class ConversationGraphJsonReader:
 
-    def __init__(self, path: str):
+    def __init__(self,
+                 path: str):
         self.corpuses: List[Corpus] = []
         self.path = path
 

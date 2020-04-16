@@ -8,13 +8,14 @@ import tflearn
 class NeuralNetwork:
 
     def __init__(self,
-                 numberOfNeurons) -> None:
+                 numberOfNeurons: int,
+                 conversation_graph: ConversationGraph) -> None:
         super().__init__()
         self.lemmatized_patterns: List[str] = None
         self.output_enumeration = []
         self.model : tflearn.DNN = None
         self.numberOfNeurons = numberOfNeurons
-        self.conversation_graph = ConversationGraph()
+        self.conversation_graph = conversation_graph
 
     def predict(self,
                 line: str):

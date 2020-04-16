@@ -1,14 +1,18 @@
-from conversationgraph import ConversationGraph
-from model import NeuralNetworkTrainingDTO
+from typing import List
+
 import spacy
 
+from model import Corpus
+from model import NeuralNetworkTrainingDTO
 
-class Lemmatizer:
 
-    def __init__(self) -> None:
+class Preprocessor:
+
+    def __init__(self,
+                 corpuses : List[Corpus]) -> None:
         super().__init__()
+        self.corpuses = corpuses
         self.skipped_characters = [',', '?', '.', '\'', ':', ';']
-        self.corpuses = ConversationGraph().corpuses
 
     def prepare_nn_entries(self):
         neural_network_dtos = []
@@ -37,6 +41,3 @@ class Lemmatizer:
             if lemma not in lemmas:
                 lemmas.append(lemma)
         return list(set(lemmas) - set(self.skipped_characters))
-
-
-res = Lemmatizer().prepare_nn_entries()

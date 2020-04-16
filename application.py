@@ -1,13 +1,15 @@
 from neuralnetwork import NeuralNetwork
-from preprocessing import Lemmatizer
+from preprocessing import Preprocessor
+from conversationgraph import ConversationGraph
 
 
 class Application(object):
 
     def __init__(self) -> None:
         super().__init__()
-        self.lemmatizer = Lemmatizer()
-        self.neural_network = NeuralNetwork(8)
+        self.conversation_graph = ConversationGraph()
+        self.lemmatizer = Preprocessor(self.conversation_graph.corpuses)
+        self.neural_network = NeuralNetwork(8, self.conversation_graph)
 
     def start(self):
         self.train_mode()
