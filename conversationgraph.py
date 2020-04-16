@@ -1,5 +1,6 @@
 from model import Corpus
 from reader import InputStreamReader
+import random
 
 
 class ConversationGraph(InputStreamReader):
@@ -33,3 +34,6 @@ class ConversationGraph(InputStreamReader):
     def close_corresponding_tags(self, corpus: Corpus):
         for tag in corpus.tagsToCloseWhenDone:
             self.get_by_tag(tag).isClosed = True
+
+    def choose_random_response(self, tag: str):
+        return random.choice(self.get_by_tag(tag).responses)

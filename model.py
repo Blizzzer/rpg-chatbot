@@ -6,7 +6,6 @@ class Corpus:
                  tag: str,
                  keywords: List[str],
                  tagsToAchieveBefore: List[str],
-                 nextTags: List[str],
                  tagsToCloseWhenDone: List[str],
                  isClosed: bool,
                  isAchieved: bool,
@@ -16,7 +15,6 @@ class Corpus:
         self.tag = tag
         self.keywords = keywords
         self.tagsToAchieveBefore = tagsToAchieveBefore
-        self.nextTags = nextTags
         self.tagsToCloseWhenDone = tagsToCloseWhenDone
         self.isClosed = isClosed
         self.isAchieved = isAchieved

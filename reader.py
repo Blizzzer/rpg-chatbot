@@ -18,7 +18,6 @@ class InputStreamReader:
                         tag["tag"],
                         tag["keywords"],
                         tag["tagsToAchieveBefore"],
-                        tag["nextTags"],
                         tag["tagsToCloseWhenDone"],
                         tag["isClosed"],
                         tag["isAchieved"],
