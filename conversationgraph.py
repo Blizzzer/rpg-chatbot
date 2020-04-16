@@ -1,12 +1,11 @@
 from model import Corpus
 from reader import ConversationGraphJsonReader
-import random
 
 
 class ConversationGraph(ConversationGraphJsonReader):
 
-    def __init__(self):
-        super().__init__("conversations-test.json")
+    def __init__(self, path: str):
+        super().__init__(path)
         self.parse_json()
 
     def get_by_tag(self, tag: str) -> Corpus:
@@ -34,6 +33,3 @@ class ConversationGraph(ConversationGraphJsonReader):
     def close_corresponding_tags(self, corpus: Corpus):
         for tag in corpus.tagsToCloseWhenDone:
             self.get_by_tag(tag).isClosed = True
-
-    def choose_random_response(self, tag: str):
-        return random.choice(self.get_by_tag(tag).responses)

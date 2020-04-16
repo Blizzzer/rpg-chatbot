@@ -17,7 +17,7 @@ class Preprocessor:
     def prepare_nn_entries(self):
         neural_network_dtos = []
         for corpus in self.corpuses:
-            if corpus.tag == 'UNKNOWN' or corpus.tag == 'ROOT_TAG':
+            if corpus.patterns.__sizeof__() == 0:
                 continue
             neural_network_dtos.append(
                 NeuralNetworkTrainingDTO(corpus.tag, [self.lemmatize_expression(pat) for pat in corpus.patterns]))
