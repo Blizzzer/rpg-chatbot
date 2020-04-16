@@ -1,4 +1,7 @@
+import random
+
 from conversationgraph import ConversationGraph
+from model import Corpus
 from neuralnetwork import NeuralNetwork
 from preprocessing import Preprocessor
 
@@ -15,4 +18,12 @@ print("Welcome in our rpg chat bot npc !!!")
 while True:
     expression = input("Player: ")
     input_lemmatize = lemmatizer.lemmatize_expression(expression)
-    neural_network.predict(input_lemmatize)
+    matching_tag: str = neural_network.predict(input_lemmatize)
+    tag: Corpus = conversation_graph.get_corpus_to_respond(matching_tag)
+    conversation_graph.close_corresponding_tags(tag)
+
+    tag.isAchieved = True
+
+    textToPrint: str = random.choice(tag.responses)
+
+    print(textToPrint)

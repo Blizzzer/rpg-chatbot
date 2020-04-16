@@ -33,7 +33,7 @@ class Preprocessor:
         return list(set(flat_lemmas))
 
     def lemmatize_expression(self, line: str):
-        nlp = spacy.load('en')
+        nlp = spacy.load('en_core_web_sm')
         doc = nlp(line)
         lemmas = []
         for token in doc:
