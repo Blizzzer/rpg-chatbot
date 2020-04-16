@@ -1,7 +1,7 @@
 from conversationgraph import ConversationGraph, Corpus
 import random
 
-graph = ConversationGraph("conversations-test.json")
+graph = ConversationGraph()
 print(graph.corpuses[0].tag)
 
 input_string: str = ""
