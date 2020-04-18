@@ -18,8 +18,19 @@
     "isClosed": true,
     "isAchieved": false,
     "redirectTo": ["QUEST_1_INTRO", "QUEST_2_INTRO"],
-    "patterns": ["Do you have any job for me?", "Can I help you with something?"],
+    "patterns": ["Do you have any job for me?", "Can I help you with something?", "How can I help you?"],
     "responses": []
+  },
+  {
+    "tag": "APPROVAL",
+    "keywords": [],
+    "tagsToAchieveBefore": [],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["Sure thing", "Fine", "I will handle it"],
+    "responses": ["Good luck", "Let the force be with you"]
   },
   {
     "tag": "GREETINGS",
