@@ -29,7 +29,7 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["Sure thing", "Fine", "I will handle it"],
+    "patterns": ["Sure thing", "Fine", "I will handle it", "Yep", "Of course"],
     "responses": ["Good luck", "Let the force be with you"]
   },
   {
