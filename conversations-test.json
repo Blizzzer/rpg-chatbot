@@ -6,9 +6,31 @@
     "tagsToCloseWhenDone": [],
     "isClosed": false,
     "isAchieved": true,
-    "redirectTo": "UNKNOWN",
+    "redirectTo": ["UNKNOWN"],
     "patterns": [],
     "responses": ["I don't know what you are talking about"]
+  },
+  {
+    "tag": "ASK_FOR_JOB",
+    "keywords": [],
+    "tagsToAchieveBefore": ["GREETINGS"],
+    "tagsToCloseWhenDone": [],
+    "isClosed": true,
+    "isAchieved": false,
+    "redirectTo": ["QUEST_1_INTRO", "QUEST_2_INTRO"],
+    "patterns": ["Do you have any job for me?", "Can I help you with something?", "How can I help you?"],
+    "responses": []
+  },
+  {
+    "tag": "APPROVAL",
+    "keywords": [],
+    "tagsToAchieveBefore": [],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["Sure thing", "Fine", "I will handle it", "Yep", "Of course"],
+    "responses": ["Good luck", "Let the force be with you"]
   },
   {
     "tag": "GREETINGS",
@@ -17,8 +39,8 @@
     "tagsToCloseWhenDone": [],
     "isClosed": false,
     "isAchieved": false,
-    "redirectTo": "UNKNOWN",
-    "patterns": ["Hello", "Greetings", "Welcome", "Good day sir"],
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["Hello", "Greetings", "Welcome", "Good day sir", "Hey", "How’s your day sir?", "Nice to see you", "Good evening", "It’s nice to meet you", "Howdy!"],
     "responses": ["Good day sir", "Welcome", "Greetings", "Hello, What brings you here?"]
   },
   {
@@ -28,8 +50,8 @@
     "tagsToCloseWhenDone": [],
     "isClosed": false,
     "isAchieved": false,
-    "redirectTo": "UNKNOWN",
-    "patterns": ["What's your profession?", "What you do for living?", "What is your occupation sir?"],
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["What's your profession?", "What you do for living?", "What is your occupation sir?", "Who are you?"],
     "responses": ["My job is to keep this town secure.", "I protecting those people.", "I help those in need."]
   },
   {
@@ -39,7 +61,7 @@
     "tagsToCloseWhenDone": [],
     "isClosed": false,
     "isAchieved": false,
-    "redirectTo": "UNKNOWN",
+    "redirectTo": ["UNKNOWN"],
     "patterns": ["Where am I?", "What is this place", "What is the name of this town?"],
     "responses": ["Greenvile", "We call this town Greenvile"]
   },
@@ -50,9 +72,9 @@
     "tagsToCloseWhenDone": ["QUEST_1_INTRO"],
     "isClosed": false,
     "isAchieved": false,
-    "redirectTo": "UNKNOWN",
-    "patterns": ["Do you have any job for me?", "Can I help you with something?"],
-    "responses": ["Yeah, Did you heard about cave to the North of town? I heard something wrong is happening there. Can you investigate?"]
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["Locals told me to contact you ,because of problems with some cave."],
+    "responses": ["I heard something wrong is happening in the cave to North of town. Can you investigate? I have bad feelings about that place."]
   },
   {
     "tag": "QUEST_1_ADD_INFO",
@@ -61,7 +83,7 @@
     "tagsToCloseWhenDone": [],
     "isClosed": false,
     "isAchieved": false,
-    "redirectTo": "QUEST_1_INTRO",
+    "redirectTo": ["QUEST_1_INTRO"],
     "patterns": ["Can you tell me again about that cave?", "Do you have more information about that cave?"],
     "responses": ["I heard bad news about cave to the north of town"]
   },
@@ -72,8 +94,41 @@
     "tagsToCloseWhenDone": ["QUEST_1_ADD_INFO", "QUEST_1_FINISH"],
     "isClosed": false,
     "isAchieved": false,
-    "redirectTo": "QUEST_1_INTRO",
+    "redirectTo": ["QUEST_1_INTRO"],
     "patterns": ["I searched the caves, there are some tracks of some cult activities there"],
     "responses": ["Good job, We need to investigate that matter further - they can be dangerous."]
+  },
+  {
+    "tag": "QUEST_2_INTRO",
+    "keywords": [],
+    "tagsToAchieveBefore": ["GREETINGS"],
+    "tagsToCloseWhenDone": ["QUEST_2_INTRO"],
+    "isClosed": false,
+    "isAchieved": false,
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["I heard that this town have some problems with bandits"],
+    "responses": ["To the west of this town there is some bandit camp. Can you check who is their leader?"]
+  },
+  {
+    "tag": "QUEST_2_ADD_INFO",
+    "keywords": ["BANDIT CAMP"],
+    "tagsToAchieveBefore": ["QUEST_2_INTRO"],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "redirectTo": ["QUEST_2_INTRO"],
+    "patterns": ["Can you tell me more about bandits?"],
+    "responses": ["From what i heard there are 10 - 20 bandits in that encampment"]
+  },
+  {
+    "tag": "QUEST_2_FINISH",
+    "keywords": ["BLACK SPIDER"],
+    "tagsToAchieveBefore": ["QUEST_2_INTRO"],
+    "tagsToCloseWhenDone": ["QUEST_2_ADD_INFO", "QUEST_2_FINISH"],
+    "isClosed": false,
+    "isAchieved": false,
+    "redirectTo": ["QUEST_2_INTRO"],
+    "patterns": ["I have investigated bandit camp - I heard about man called Black Spider ,who is pulling the strings"],
+    "responses": ["We must do something about that Black Spider. He could dangerous, contact me when you are ready"]
   }
 ]

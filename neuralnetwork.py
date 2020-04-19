@@ -29,8 +29,7 @@ class NeuralNetwork:
 
         res = self.model.predict([entry])
         res_max = np.argmax(res)
-        matching_tag = self.output_enumeration[res_max]
-        print(self.conversation_graph.choose_random_response(matching_tag))
+        return self.output_enumeration[res_max]
 
     def train(self,
               trainSet: List[NeuralNetworkTrainingDTO],

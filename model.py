@@ -9,7 +9,7 @@ class Corpus:
                  tagsToCloseWhenDone: List[str],
                  isClosed: bool,
                  isAchieved: bool,
-                 redirectTo: str,
+                 redirectTo: List[str],
                  patterns: List[str],
                  responses: List[str]):
         self.tag = tag

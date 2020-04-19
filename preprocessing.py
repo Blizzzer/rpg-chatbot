@@ -17,7 +17,7 @@ class Preprocessor:
     def prepare_nn_entries(self):
         neural_network_dtos = []
         for corpus in self.corpuses:
-            if corpus.tag == 'UNKNOWN' or corpus.tag == 'ROOT_TAG':
+            if corpus.patterns.__sizeof__() == 0:
                 continue
             neural_network_dtos.append(
                 NeuralNetworkTrainingDTO(corpus.tag, [self.lemmatize_expression(pat) for pat in corpus.patterns]))
@@ -33,7 +33,7 @@ class Preprocessor:
         return list(set(flat_lemmas))
 
     def lemmatize_expression(self, line: str):
-        nlp = spacy.load('en')
+        nlp = spacy.load('en_core_web_sm')
         doc = nlp(line)
         lemmas = []
         for token in doc:
