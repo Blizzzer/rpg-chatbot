@@ -17,7 +17,7 @@ neural_network.train(
     lemmatizer.prepare_nn_entries(),
     lemmatizer.lemmatize_all_patterns())
 
-print("Welcome in our rpg chat bot npc !!!")
+print(config.get("config", "welcome_message"))
 
 while True:
     expression = input(config.get("config", "player_tag") + ": ")
