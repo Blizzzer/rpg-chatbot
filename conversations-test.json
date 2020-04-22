@@ -18,7 +18,7 @@
     "isClosed": true,
     "isAchieved": false,
     "redirectTo": ["QUEST_1_INTRO", "QUEST_2_INTRO"],
-    "patterns": ["Do you have any job for me?", "Can I help you with something?", "How can I help you?"],
+    "patterns": ["Do you have any job for me?", "Can I help you with something?", "How can I help you?", "What should I do?"],
     "responses": []
   },
   {
@@ -29,7 +29,7 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["What is your name?", "How they call you?", "I'm sorry. I didn't catch your name", "Can you repeat your name?"],
+    "patterns": ["What is your name?", "How they call you?", "I'm sorry. I didn't catch your name", "Can you repeat your name?", ""],
     "responses": ["My name is Sildar"]
   },
   {
@@ -62,7 +62,8 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["Hello", "Greetings", "Welcome", "Good day sir", "Hey", "How’s your day sir?", "Nice to see you", "Good evening", "It’s nice to meet you", "Howdy!"],
+    "patterns": ["Hello", "Greetings", "Welcome", "Good day sir", "Hey", "How’s your day sir?", "Nice to see you", "Good evening", "It’s nice to meet you", "Howdy!",
+    "Good monring", "Good afternoon", "Good evening", "It's a pleasure to meet you", "Hi", "Yo"],
     "responses": ["Good day sir", "Welcome", "Greetings", "Hello, What brings you here?"]
   },
   {
@@ -73,7 +74,7 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["What's your profession?", "What you do for living?", "What is your occupation sir?", "Who are you?"],
+    "patterns": ["What's your profession?", "What you do for living?", "What is your occupation sir?", "Who are you?", "What are you doing?"],
     "responses": ["My job is to keep this town secure.", "I protecting those people.", "I help those in need."]
   },
   {
@@ -84,7 +85,7 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["Where can I buy equipment?", "Can you suggest me some shop?"],
+    "patterns": ["Where can I buy equipment?", "Can you suggest me some shop?", "Is there any chance here to get some equipment?", "Where could I do some shopping?"],
     "responses": ["If you are searching for weapons ,then go to Lionshield coster in the western part of town. If you are searching for provisions ,then I suggest going to Barthen's Provisions right next to this place"]
   },
   {
@@ -95,7 +96,7 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["Where am I?", "What is this place", "What is the name of this town?"],
+    "patterns": ["Where am I?", "What is this place", "What is the name of this town?", "Where I am actually?", "How they call this city?"],
     "responses": ["Phandalin", "We call this town Phandalin"]
   },
   {
@@ -150,7 +151,7 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["QUEST_2_INTRO"],
-    "patterns": ["Can you tell me more about bandits?"],
+    "patterns": ["Can you tell me more about bandits?", "Who are these bandits?"],
     "responses": ["From what i heard there are 10 - 20 bandits in that encampment", "There are rumours that in the evening they are drinking hard and should it be easier then to sneak into the camp not detected."]
   },
   {
