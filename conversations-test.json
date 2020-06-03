@@ -29,7 +29,7 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["What is your name?", "How they call you?", "I'm sorry. I didn't catch your name", "Can you repeat your name?", ""],
+    "patterns": ["What is your name?", "How they call you?", "I'm sorry. I didn't catch your name", "Can you repeat your name?"],
     "responses": ["My name is Sildar"]
   },
   {
@@ -85,7 +85,7 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["Where can I buy equipment?", "Can you suggest me some shop?", "Is there any chance here to get some equipment?", "Where could I do some shopping?"],
+    "patterns": ["Where can I buy equipment?", "Can you suggest me some shop?", "Is there any chance here to get some equipment?", "Where could I do some shopping?", "I want to buy something."],
     "responses": ["If you are searching for weapons ,then go to Lionshield coster in the western part of town. If you are searching for provisions ,then I suggest going to Barthen's Provisions right next to this place"]
   },
   {

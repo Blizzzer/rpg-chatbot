@@ -29,7 +29,10 @@ class NeuralNetwork:
 
         res = self.model.predict([entry])
         res_max = np.argmax(res)
-        return self.output_enumeration[res_max]
+        if max(res[0]) < 0.5:
+            return "UNKNOWN"
+        else:
+            return self.output_enumeration[res_max]
 
     def train(self,
               trainSet: List[NeuralNetworkTrainingDTO],
