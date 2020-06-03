@@ -18,8 +18,19 @@
     "isClosed": true,
     "isAchieved": false,
     "redirectTo": ["QUEST_1_INTRO", "QUEST_2_INTRO"],
-    "patterns": ["Do you have any job for me?", "Can I help you with something?", "How can I help you?"],
+    "patterns": ["Do you have any job for me?", "Can I help you with something?", "How can I help you?", "What should I do?"],
     "responses": []
+  },
+  {
+    "tag": "ASK_FOR_NAME",
+    "keywords": [],
+    "tagsToAchieveBefore": ["GREETINGS"],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["What is your name?", "How they call you?", "I'm sorry. I didn't catch your name", "Can you repeat your name?"],
+    "responses": ["My name is Sildar"]
   },
   {
     "tag": "APPROVAL",
@@ -33,6 +44,17 @@
     "responses": ["Good luck", "Let the force be with you"]
   },
   {
+    "tag": "RESPONSE_TO_GRATITUDE",
+    "keywords": [],
+    "tagsToAchieveBefore": ["GREETINGS"],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["Thanks", "I appreciate it", "Thank you", "You saved my life", "I’ll pay you back"],
+    "responses": ["No problem", "You are welcome"]
+  },
+  {
     "tag": "GREETINGS",
     "keywords": [],
     "tagsToAchieveBefore": [],
@@ -40,7 +62,8 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["Hello", "Greetings", "Welcome", "Good day sir", "Hey", "How’s your day sir?", "Nice to see you", "Good evening", "It’s nice to meet you", "Howdy!"],
+    "patterns": ["Hello", "Greetings", "Welcome", "Good day sir", "Hey", "How’s your day sir?", "Nice to see you", "Good evening", "It’s nice to meet you", "Howdy!",
+    "Good monring", "Good afternoon", "Good evening", "It's a pleasure to meet you", "Hi", "Yo"],
     "responses": ["Good day sir", "Welcome", "Greetings", "Hello, What brings you here?"]
   },
   {
@@ -51,8 +74,19 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["What's your profession?", "What you do for living?", "What is your occupation sir?", "Who are you?"],
+    "patterns": ["What's your profession?", "What you do for living?", "What is your occupation sir?", "Who are you?", "What are you doing?"],
     "responses": ["My job is to keep this town secure.", "I protecting those people.", "I help those in need."]
+  },
+  {
+    "tag": "SHOPPING",
+    "keywords": [],
+    "tagsToAchieveBefore": ["GREETINGS"],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["Where can I buy equipment?", "Can you suggest me some shop?", "Is there any chance here to get some equipment?", "Where could I do some shopping?", "I want to buy something."],
+    "responses": ["If you are searching for weapons ,then go to Lionshield coster in the western part of town. If you are searching for provisions ,then I suggest going to Barthen's Provisions right next to this place"]
   },
   {
     "tag": "TOWN",
@@ -62,8 +96,8 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["Where am I?", "What is this place", "What is the name of this town?"],
-    "responses": ["Greenvile", "We call this town Greenvile"]
+    "patterns": ["Where am I?", "What is this place", "What is the name of this town?", "Where I am actually?", "How they call this city?"],
+    "responses": ["Phandalin", "We call this town Phandalin"]
   },
   {
     "tag": "QUEST_1_INTRO",
@@ -85,7 +119,7 @@
     "isAchieved": false,
     "redirectTo": ["QUEST_1_INTRO"],
     "patterns": ["Can you tell me again about that cave?", "Do you have more information about that cave?"],
-    "responses": ["I heard bad news about cave to the north of town"]
+    "responses": ["I heard bad news about cave to the north of town", "Be careful there, recently bad things happens around there", "Two young guys went missing there - try asking Linene Graywind from Lionshield coster"]
   },
   {
     "tag": "QUEST_1_FINISH",
@@ -117,8 +151,8 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["QUEST_2_INTRO"],
-    "patterns": ["Can you tell me more about bandits?"],
-    "responses": ["From what i heard there are 10 - 20 bandits in that encampment"]
+    "patterns": ["Can you tell me more about bandits?", "Who are these bandits?"],
+    "responses": ["From what i heard there are 10 - 20 bandits in that encampment", "There are rumours that in the evening they are drinking hard and should it be easier then to sneak into the camp not detected."]
   },
   {
     "tag": "QUEST_2_FINISH",
