@@ -8,7 +8,7 @@
     "isAchieved": true,
     "redirectTo": ["UNKNOWN"],
     "patterns": [],
-    "responses": ["I don't know what you are talking about"]
+    "responses": ["I don't know what you are talking about", "I do not understand", "Can you repeat?"]
   },
   {
     "tag": "ASK_FOR_JOB",
@@ -17,8 +17,8 @@
     "tagsToCloseWhenDone": [],
     "isClosed": true,
     "isAchieved": false,
-    "redirectTo": ["QUEST_1_INTRO", "QUEST_2_INTRO"],
-    "patterns": ["Do you have any job for me?", "Can I help you with something?", "How can I help you?", "What should I do?"],
+    "redirectTo": ["QUEST_1_INTRO", "QUEST_2_INTRO", "WHERE_TO_GO_NEXT_SUGGESTION"],
+    "patterns": ["Do you have any job for me?", "Can I help you with something?", "How can I help you?", "What should I do?", "I want to earn some coin."],
     "responses": []
   },
   {
@@ -30,7 +30,7 @@
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
     "patterns": ["What is your name?", "How they call you?", "I'm sorry. I didn't catch your name", "Can you repeat your name?"],
-    "responses": ["My name is Sildar"]
+    "responses": ["My name is Sildar", "I am Sildar"]
   },
   {
     "tag": "APPROVAL",
@@ -63,7 +63,7 @@
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
     "patterns": ["Hello", "Greetings", "Welcome", "Good day sir", "Hey", "How’s your day sir?", "Nice to see you", "Good evening", "It’s nice to meet you", "Howdy!",
-    "Good monring", "Good afternoon", "Good evening", "It's a pleasure to meet you", "Hi", "Yo"],
+    "Good morning", "Good afternoon", "Good evening", "It's a pleasure to meet you", "Hi", "Yo"],
     "responses": ["Good day sir", "Welcome", "Greetings", "Hello, What brings you here?"]
   },
   {
@@ -97,7 +97,51 @@
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
     "patterns": ["Where am I?", "What is this place", "What is the name of this town?", "Where I am actually?", "How they call this city?"],
-    "responses": ["Phandalin", "We call this town Phandalin"]
+    "responses": ["Phandalin", "We call this town Phandalin", "We are in Phandalin"]
+  },
+  {
+    "tag": "NEAREST_TOWN",
+    "keywords": [],
+    "tagsToAchieveBefore": ["GREETINGS"],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["What are the nearest cities?", "Where can i go from here?"],
+    "responses": ["Three larges towns from here are: Neverwinter, Waterdeep and Triboar", "If you go north with this road you will reach Triboar", "If you go south with this road you will get between Neverwinter and Waterdeep", "The closest big city from here is Neverwinter"]
+  },
+  {
+    "tag": "WHERE_TO_GO_NEXT_SUGGESTION",
+    "keywords": [],
+    "tagsToAchieveBefore": ["QUEST_1_FINISH", "QUEST_2_FINISH"],
+    "tagsToCloseWhenDone": [],
+    "isClosed": true,
+    "isAchieved": false,
+    "redirectTo": ["UNKNOWN"],
+    "patterns": [],
+    "responses": ["You should go either to Neverwinter or to Triboar. I am sure that you will find something interesting there to do."]
+  },
+  {
+    "tag": "WHERE_IS_NEVERWINTER",
+    "keywords": [],
+    "tagsToAchieveBefore": ["GREETINGS"],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["How can I get to Neverwinter?", "Where is Neverwinter?"],
+    "responses": ["Go south with this road and turn right on crossroads."]
+  },
+  {
+    "tag": "WHERE_IS_TRIBOAR",
+    "keywords": [],
+    "tagsToAchieveBefore": ["GREETINGS"],
+    "tagsToCloseWhenDone": [],
+    "isClosed": false,
+    "isAchieved": false,
+    "redirectTo": ["UNKNOWN"],
+    "patterns": ["How can I get to Triboar?", "Where is Triboar?"],
+    "responses": ["Go north with this road"]
   },
   {
     "tag": "QUEST_1_INTRO",
