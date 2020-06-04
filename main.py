@@ -15,4 +15,16 @@ first_conversation: List[str] = [
     "Where can I go now?",
     "Appreciate it",
 ]
+second_conversation: List[str] = [
+    "Hello",
+    "I encountered some bandit camp nearby",
+    "I forgot asking. What is your name?",
+    "What you actualy do here?",
+    "Thanks",
+    "I have cleared bandit camp, I heard about some Black Spider there.",
+    "Triboar should be nearby. How to get there?",
+    "Fine, I will go there"
+
+]
+
 application.main([4, 4], 0.5)
