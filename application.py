@@ -8,7 +8,7 @@ from neuralnetwork import NeuralNetwork
 from preprocessing import Preprocessor
 
 
-def main(neurons_list: List[int]):
+def main(neurons_list: List[int], inputs=None):
     config = SafeConfigParser()
     config.read("config.ini")
 
@@ -21,16 +21,25 @@ def main(neurons_list: List[int]):
         lemmatizer.lemmatize_all_patterns())
 
     print(config.get("strings", "welcome_message"))
+    if inputs is None:
 
-    while True:
-        expression = input(config.get("strings", "player_tag") + ": ")
-        input_lemmatize = lemmatizer.lemmatize_expression(expression)
-        matching_tag: str = neural_network.predict(input_lemmatize)
+        while True:
+            user_input = input(config.get("strings", "player_tag") + ": ")
+            response(config, lemmatizer, neural_network, conversation_graph, user_input)
 
-        tag: Corpus = conversation_graph.get_corpus_to_respond(matching_tag)
+    else:
+        for user_input in inputs:
+            response(config, lemmatizer, neural_network, conversation_graph, user_input)
 
-        conversation_graph.close_corresponding_tags(tag)
 
-        tag.isAchieved = True
+def response(config, lemmatizer, neural_network, conversation_graph, user_input):
+    input_lemmatize = lemmatizer.lemmatize_expression(user_input)
+    matching_tag: str = neural_network.predict(input_lemmatize)
 
-        print(config.get("strings", "npc_tag") + ": " + random.choice(tag.responses))
+    tag: Corpus = conversation_graph.get_corpus_to_respond(matching_tag)
+
+    conversation_graph.close_corresponding_tags(tag)
+
+    tag.isAchieved = True
+
+    print(config.get("strings", "npc_tag") + ": " + random.choice(tag.responses))
