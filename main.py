@@ -1,3 +1,3 @@
 import application
 
-application.main()
+application.main(4)
