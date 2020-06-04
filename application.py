@@ -8,13 +8,13 @@ from neuralnetwork import NeuralNetwork
 from preprocessing import Preprocessor
 
 
-def main(neurons_list: List[int], inputs=None):
+def main(neurons_list: List[int], threshold: float, inputs=None):
     config = SafeConfigParser()
     config.read("config.ini")
 
     conversation_graph = ConversationGraph(config.get("main", "path_to_cg_json"))
     lemmatizer = Preprocessor(conversation_graph.corpuses)
-    neural_network = NeuralNetwork(neurons_list, conversation_graph)
+    neural_network = NeuralNetwork(neurons_list, conversation_graph, threshold)
 
     neural_network.train(
         lemmatizer.prepare_nn_entries(),

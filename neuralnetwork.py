@@ -9,13 +9,15 @@ class NeuralNetwork:
 
     def __init__(self,
                  neurons_list: List[int],
-                 conversation_graph: ConversationGraph) -> None:
+                 conversation_graph: ConversationGraph,
+                 threshold: float) -> None:
         super().__init__()
         self.lemmatized_patterns: List[str] = None
         self.output_enumeration = []
         self.model: tflearn.DNN = None
         self.neurons_list = neurons_list
         self.conversation_graph = conversation_graph
+        self.threshold = threshold
 
     def predict(self,
                 line: str):
@@ -29,7 +31,7 @@ class NeuralNetwork:
 
         res = self.model.predict([entry])
         res_max = np.argmax(res)
-        if max(res[0]) < 0.5:
+        if max(res[0]) < self.threshold:
             return "UNKNOWN"
         else:
             return self.output_enumeration[res_max]
