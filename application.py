@@ -9,7 +9,7 @@ from preprocessing import Preprocessor
 config = SafeConfigParser()
 config.read("config.ini")
 
-conversation_graph = ConversationGraph(config.get("config", "path_to_cg_json"))
+conversation_graph = ConversationGraph(config.get("main", "path_to_cg_json"))
 lemmatizer = Preprocessor(conversation_graph.corpuses)
 neural_network = NeuralNetwork(4, conversation_graph)
 
@@ -17,10 +17,10 @@ neural_network.train(
     lemmatizer.prepare_nn_entries(),
     lemmatizer.lemmatize_all_patterns())
 
-print(config.get("config", "welcome_message"))
+print(config.get("strings", "welcome_message"))
 
 while True:
-    expression = input(config.get("config", "player_tag") + ": ")
+    expression = input(config.get("strings", "player_tag") + ": ")
     input_lemmatize = lemmatizer.lemmatize_expression(expression)
     matching_tag: str = neural_network.predict(input_lemmatize)
 
@@ -30,4 +30,4 @@ while True:
 
     tag.isAchieved = True
 
-    print(config.get("config", "npc_tag") + ": " + random.choice(tag.responses))
+    print(config.get("strings", "npc_tag") + ": " + random.choice(tag.responses))
