@@ -1,5 +1,6 @@
 import random
 from configparser import SafeConfigParser
+from typing import List
 
 from conversationgraph import ConversationGraph
 from model import Corpus
@@ -7,13 +8,13 @@ from neuralnetwork import NeuralNetwork
 from preprocessing import Preprocessor
 
 
-def main(numberOfNeurons: int):
+def main(neurons_list: List[int]):
     config = SafeConfigParser()
     config.read("config.ini")
 
     conversation_graph = ConversationGraph(config.get("main", "path_to_cg_json"))
     lemmatizer = Preprocessor(conversation_graph.corpuses)
-    neural_network = NeuralNetwork(numberOfNeurons, conversation_graph)
+    neural_network = NeuralNetwork(neurons_list, conversation_graph)
 
     neural_network.train(
         lemmatizer.prepare_nn_entries(),

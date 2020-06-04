@@ -1,3 +1,3 @@
 import application
 
-application.main(4)
+application.main([4, 4])
