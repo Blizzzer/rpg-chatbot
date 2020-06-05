@@ -1,0 +1,52 @@
+Outputs for threshold: 0.5, neurons in layers: 4,4
+Npc: I don't know what you are talking about
+Npc: Hello, What brings you here?
+Npc: I am Sildar
+Npc: Phandalin
+Npc: No problem
+Npc: Can you repeat?
+Npc: I do not understand
+Npc: Good day sir
+Npc: I heard something wrong is happening in the cave to North of town. Can you investigate? I have bad feelings about that place.
+Npc: Can you repeat?
+Npc: No problem
+
+Outputs for threshold: 0.7, neurons in layers: 8,8
+Npc: I do not understand
+Npc: Greetings
+Npc: I am Sildar
+Npc: We call this town Phandalin
+Npc: You are welcome
+Npc: I don't know what you are talking about
+Npc: I do not understand
+Npc: Hello, What brings you here?
+Npc: I heard something wrong is happening in the cave to North of town. Can you investigate? I have bad feelings about that place.
+Npc: I don't know what you are talking about
+Npc: No problem
+
+Outputs for threshold: 0.7, neurons in layers: 8,8
+Npc: I don't know what you are talking about
+Npc: Greetings
+Npc: I am Sildar
+Npc: Phandalin
+Npc: You are welcome
+Npc: I don't know what you are talking about
+Npc: I don't know what you are talking about
+Npc: Welcome
+Npc: I heard something wrong is happening in the cave to North of town. Can you investigate? I have bad feelings about that place.
+Npc: Can you repeat?
+Npc: No problem
+
+Outputs for threshold: 0.7, neurons in layers: 5,8
+Npc: I don't know what you are talking about
+Npc: Good day sir
+Npc: I am Sildar
+Npc: We call this town Phandalin
+Npc: No problem
+Npc: Can you repeat?
+Npc: I don't know what you are talking about
+Npc: Welcome
+Npc: Can you repeat?
+Npc: We are in Phandalin
+Npc: No problem
+

@@ -27,4 +27,5 @@ second_conversation: List[str] = [
 
 ]
 
-application.main([4, 4], 0.5)
+application.main([5, 8], 0.7, first_conversation)
+# ... teraz tylko trzeba się zastanowić na tym jakie parametry dobierać

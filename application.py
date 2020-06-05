@@ -1,4 +1,5 @@
 import random
+import pickle
 from configparser import SafeConfigParser
 from typing import List
 
@@ -16,20 +17,28 @@ def main(neurons_list: List[int], threshold: float, inputs=None):
     lemmatizer = Preprocessor(conversation_graph.corpuses)
     neural_network = NeuralNetwork(neurons_list, conversation_graph, threshold)
 
-    neural_network.train(
-        lemmatizer.prepare_nn_entries(),
-        lemmatizer.lemmatize_all_patterns())
+    entries = prepare_nn_entries(lemmatizer)
+    patterns = prepare_nn_patterns(lemmatizer)
+
+    neural_network.train(entries, patterns)
 
     print(config.get("strings", "welcome_message"))
     if inputs is None:
 
         while True:
             user_input = input(config.get("strings", "player_tag") + ": ")
-            response(config, lemmatizer, neural_network, conversation_graph, user_input)
-
+            print(response(config, lemmatizer, neural_network, conversation_graph, user_input))
     else:
+        file = open("outputs.txt", "a")
+        file.write("Outputs for threshold: " + threshold.__str__() + ", neurons in layers: " +
+                   ','.join([str(s) for s in neurons_list]) + "\n")
         for user_input in inputs:
-            response(config, lemmatizer, neural_network, conversation_graph, user_input)
+            res = response(config, lemmatizer, neural_network, conversation_graph, user_input)
+            print(res)
+            file.write(res)
+            file.write("\n")
+        file.write("\n")
+        file.close()
 
 
 def response(config, lemmatizer, neural_network, conversation_graph, user_input):
@@ -42,4 +51,25 @@ def response(config, lemmatizer, neural_network, conversation_graph, user_input)
 
     tag.isAchieved = True
 
-    print(config.get("strings", "npc_tag") + ": " + random.choice(tag.responses))
+    return (config.get("strings", "npc_tag") + ": " + random.choice(tag.responses))
+
+
+def prepare_nn_entries(lemmatizer: Preprocessor):
+    try:
+        with open('nn_entries.pickle', 'rb') as handle:
+            nn_entries = pickle.load(handle)
+    except:
+        nn_entries = lemmatizer.prepare_nn_entries()
+        with open('nn_entries.pickle', 'wb') as handle:
+            pickle.dump(nn_entries, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    return nn_entries
+
+def prepare_nn_patterns(lemmatizer: Preprocessor):
+    try:
+        with open('nn_patterns.pickle', 'rb') as handle:
+            nn_patterns = pickle.load(handle)
+    except:
+        nn_patterns = lemmatizer.lemmatize_all_patterns()
+        with open('nn_patterns.pickle', 'wb') as handle:
+            pickle.dump(nn_patterns, handle, protocol=pickle.HIGHEST_PROTOCOL)
+    return nn_patterns
