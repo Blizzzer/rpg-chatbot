@@ -33,9 +33,10 @@ def main(neurons_list: List[int], threshold: float, inputs=None):
         file.write("Outputs for threshold: " + threshold.__str__() + ", neurons in layers: " +
                    ','.join([str(s) for s in neurons_list]) + "\n")
         for user_input in inputs:
-            res = response(config, lemmatizer, neural_network, conversation_graph, user_input)
+            res = response(config, lemmatizer, neural_network,
+                           conversation_graph, user_input)[len(config.get("strings", "npc_tag") + ": "):]
             print(res)
-            file.write(res)
+            file.write(res + " ----> tag: " + conversation_graph.get_tag_by_response(res))
             file.write("\n")
         file.write("\n")
         file.close()

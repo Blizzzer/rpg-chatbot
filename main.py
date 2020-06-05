@@ -28,4 +28,4 @@ second_conversation: List[str] = [
 ]
 
 application.main([5, 8], 0.7, first_conversation)
-# ... teraz tylko trzeba się zastanowić na tym jakie parametry dobierać
+application.main([10, 10], 0.5, first_conversation)
