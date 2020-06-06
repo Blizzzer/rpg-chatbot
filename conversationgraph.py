@@ -44,3 +44,8 @@ class ConversationGraph(ConversationGraphJsonReader):
     def close_corresponding_tags(self, corpus: Corpus):
         for tag in corpus.tagsToCloseWhenDone:
             self.get_by_tag(tag).isClosed = True
+
+    def get_tag_by_response(self, response: str):
+        for corpus in self.corpuses:
+            if response in corpus.responses:
+                return corpus.tag

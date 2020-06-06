@@ -115,8 +115,8 @@
     "keywords": [],
     "tagsToAchieveBefore": ["QUEST_1_FINISH", "QUEST_2_FINISH"],
     "tagsToCloseWhenDone": [],
-    "isClosed": true,
-    "isAchieved": false,
+    "isClosed": false,
+    "isAchieved": true,
     "redirectTo": ["UNKNOWN"],
     "patterns": [],
     "responses": ["You should go either to Neverwinter or to Triboar. I am sure that you will find something interesting there to do."]
@@ -162,7 +162,7 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["QUEST_1_INTRO"],
-    "patterns": ["Can you tell me again about that cave?", "Do you have more information about that cave?"],
+    "patterns": ["Can you tell me again about that cave?", "Do you have more information about that cave?", "Could you tell me more about the cave?"],
     "responses": ["I heard bad news about cave to the north of town", "Be careful there, recently bad things happens around there", "Two young guys went missing there - try asking Linene Graywind from Lionshield coster"]
   },
   {
@@ -173,7 +173,7 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["QUEST_1_INTRO"],
-    "patterns": ["I searched the caves, there are some tracks of some cult activities there"],
+    "patterns": ["I searched the caves, there are some tracks of some cult activities there", "There was cult activity in the cave."],
     "responses": ["Good job, We need to investigate that matter further - they can be dangerous."]
   },
   {
@@ -184,7 +184,8 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["UNKNOWN"],
-    "patterns": ["I heard that this town have some problems with bandits"],
+    "patterns": ["I heard that this town have some problems with bandits", "This town has serious crime problems.",
+    "Sheriff should take care of these bandits"],
     "responses": ["To the west of this town there is some bandit camp. Can you check who is their leader?"]
   },
   {
@@ -206,7 +207,8 @@
     "isClosed": false,
     "isAchieved": false,
     "redirectTo": ["QUEST_2_INTRO"],
-    "patterns": ["I have investigated bandit camp - I heard about man called Black Spider ,who is pulling the strings"],
+    "patterns": ["I have investigated bandit camp - I heard about man called Black Spider, who is pulling the strings",
+    "I have been to bandit camp already.", "I met man who they call black spider.", "I saw black spider."],
     "responses": ["We must do something about that Black Spider. He could dangerous, contact me when you are ready"]
   }
 ]
