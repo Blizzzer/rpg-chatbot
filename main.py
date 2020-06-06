@@ -21,7 +21,7 @@ first_conversation_expected_outputs: List[List[str]] = [
     ["ASK_FOR_NAME"],
     ["TOWN"],
     ["RESPONSE_TO_GRATITUDE"],
-    ["ASK_FOR_JOB", "QUEST_1_INTRO", "QUEST_2_INTRO", "WHERE_TO_GO_NEXT_SUGGESTION"],
+    ["QUEST_1_INTRO", "QUEST_2_INTRO"],
     ["SHOPPING"],
     ["GREETINGS"],
     ["QUEST_1_FINISH"],
@@ -38,6 +38,17 @@ second_conversation: List[str] = [
     "Triboar should be nearby. How to get there?",
     "Fine, I will go there"
 
+]
+
+second_conversation_expected_outputs: List[List[str]] = [
+    ["GREETINGS"],
+    ["QUEST_2_INTRO"],
+    ["ASK_FOR_NAME"],
+    ["PROFFESION"],
+    ["RESPONSE_TO_GRATITUDE"],
+    ["QUEST_2_TRIBOAR"],
+    ["WHERE_IS_TRIBOAR"],
+    ["APPROVAL"]
 ]
 
 application.main([5, 8], 0.7, first_conversation, first_conversation_expected_outputs)
