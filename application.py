@@ -9,7 +9,7 @@ from neuralnetwork import NeuralNetwork
 from preprocessing import Preprocessor
 
 
-def main(neurons_list: List[int], threshold: float, inputs=None):
+def main(neurons_list: List[int], threshold: float, inputs=None, expectedResults=None):
     config = SafeConfigParser()
     config.read("config.ini")
 
@@ -32,12 +32,17 @@ def main(neurons_list: List[int], threshold: float, inputs=None):
         file = open("outputs.txt", "a")
         file.write("Outputs for threshold: " + threshold.__str__() + ", neurons in layers: " +
                    ','.join([str(s) for s in neurons_list]) + "\n")
-        for user_input in inputs:
+        counter = 0
+        for i, user_input in enumerate(inputs, 0):
             res = response(config, lemmatizer, neural_network,
                            conversation_graph, user_input)[len(config.get("strings", "npc_tag") + ": "):]
             print(res)
-            file.write(res + " ----> tag: " + conversation_graph.get_tag_by_response(res))
+            tag = conversation_graph.get_tag_by_response(res)
+            file.write(res + " ----> tag: " + tag)
             file.write("\n")
+            if tag in expectedResults[i]:
+                counter = counter + 1
+        file.write("Accuracy: " + str(counter) + "/" + str(len(inputs)))
         file.write("\n")
         file.close()
 
@@ -64,6 +69,7 @@ def prepare_nn_entries(lemmatizer: Preprocessor):
         with open('nn_entries.pickle', 'wb') as handle:
             pickle.dump(nn_entries, handle, protocol=pickle.HIGHEST_PROTOCOL)
     return nn_entries
+
 
 def prepare_nn_patterns(lemmatizer: Preprocessor):
     try:

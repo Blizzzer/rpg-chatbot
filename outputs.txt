@@ -1,0 +1,13 @@
+Outputs for threshold: 0.7, neurons in layers: 5,8
+Can you repeat? ----> tag: UNKNOWN
+Welcome ----> tag: GREETINGS
+My name is Sildar ----> tag: ASK_FOR_NAME
+We call this town Phandalin ----> tag: TOWN
+You are welcome ----> tag: RESPONSE_TO_GRATITUDE
+I do not understand ----> tag: UNKNOWN
+Can you repeat? ----> tag: UNKNOWN
+Greetings ----> tag: GREETINGS
+I heard something wrong is happening in the cave to North of town. Can you investigate? I have bad feelings about that place. ----> tag: QUEST_1_INTRO
+Go south with this road and turn right on crossroads. ----> tag: WHERE_IS_NEVERWINTER
+You are welcome ----> tag: RESPONSE_TO_GRATITUDE
+Accuracy: 7/11
